@@ -1,0 +1,60 @@
+/* Toggel */
+.toggel {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+}
+.toggel__title {
+  font-weight: var(--font-weight-medium);
+  font-size: 1.2rem;
+}
+.toggle__checkbox {
+  display: none;
+}
+
+.toggel__lable {
+  display: block;
+  position: relative;
+  background-color: var(--color-black);
+  border-radius: 1.5rem;
+  width: 2.8rem;
+  height: 1.4rem;
+  cursor: pointer;
+  padding: 0.3rem 0.4rem;
+  transition: 0.3s;
+}
+.toggel__lable::after {
+  content: "";
+  width: 1.1rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  display: block;
+  background-color: var(--color-white);
+  transition: 0.3s;
+}
+.toggle__checkbox:checked + .toggel__lable {
+  background-color: var(--color-white);
+}
+
+.toggle__checkbox:checked + .toggel__lable::after {
+  transform: translateX(1.2rem);
+  background-color: var(--color-green);
+}
+.section {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: start;
+}
+.section--with-bg {
+  padding: 5rem 0;
+}
+.section--with-bg::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  background-color: var(--color-grey);
+  justify-self: center;
+  z-index: -1;
+}

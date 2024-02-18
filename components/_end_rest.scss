@@ -1,0 +1,80 @@
+/* End Css Reset */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
+}
+body {
+  font-size: 1.1rem;
+  font-family: var(--font-family-raleway);
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+.container {
+  display: grid;
+  row-gap: 11rem;
+  margin: 0 auto;
+  max-width: var(--container-width);
+  padding-inline: var(--gutter);
+}
+
+.video-loop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-grey);
+  padding: 1.6rem 0;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  border-bottom: 0.1rem solid var(--color-input-border);
+  height: 100%;
+  width: 100vw;
+  top: 0;
+  z-index: -1;
+  background-color: var(--color-background);
+}
+.navigation {
+  transition: var(--transition-timing);
+}
+.navigation__list {
+  display: flex;
+  gap: 1rem;
+}
+.navigation__link,
+.navigation__link:visited {
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+}
+.navigation__link:visited,
+.navigation__link:hover {
+  text-decoration: underline;
+  color: var(--color-text);
+}
+/* .container:has.navigation__bio, */
+.container:has(.skills:target).navigation__skills,
+.container:has(.media:target).navigation__media,
+.container:has(.project:target).navigation__project,
+.container:has(.clients:target).navigation__clients,
+.container:has(.content:target).navigation__content {
+  color: var(--color-blue);
+  text-decoration: underline;
+  font-weight: var(--font-weight-bold);
+}
+
+.burger-menu__checkbox {
+  display: none;
+}
